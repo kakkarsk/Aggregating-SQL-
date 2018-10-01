@@ -4,15 +4,15 @@
 
 SELECT
     
-    date,
+   date,
    
-     ZIP,
+   ZIP,
 	
-	MAX(MaxTemperatureF) MaxTemperatureF
+MAX(MaxTemperatureF) MaxTemperatureF
 
 FROM
    
-   weather
+   Weather
 	
 
 GROUP BY date,ZIP;
@@ -25,13 +25,13 @@ Output : "2015-11-17"	"94063"	"134"
 
 SELECT
    
-   start_station,
-    COUNT(*) AS trip_count
+   Start_station,
+   COUNT(*) AS trip_count
 
 
 FROM
    
-   trips
+  trips
 
 
 GROUP BY 1
@@ -48,7 +48,7 @@ SELECT
 
 FROM
     
-    trips
+   trips
     
 
 Output: The shortest trip duration is 60 seconds
@@ -61,9 +61,10 @@ Output: The shortest trip duration is 60 seconds
    end_station,
    
    AVG(duration) as average_duration
+
 FROM
    
-   trips
+  trips
 
 
 GROUP BY 1
