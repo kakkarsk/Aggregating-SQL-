@@ -3,20 +3,13 @@
 1: What was the hottest day in our data set? Where was that?
 
 SELECT
-    
-   date,
-   
-   ZIP,
-	
-MAX(MaxTemperatureF) MaxTemperatureF
-
+    zip,
+    date,
+    MAX(maxtemperaturef) as max_temp
 FROM
-   
-   Weather
-	
-
-GROUP BY date,ZIP;
-
+    weather
+GROUP BY zip, date
+ORDER BY max_temp DESC
 
 Output : "2015-11-17"	"94063"	"134"
 
@@ -24,16 +17,10 @@ Output : "2015-11-17"	"94063"	"134"
 2:How many trips started at each station?
 
 SELECT
-   
-   Start_station,
-   COUNT(*) AS trip_count
-
-
+    start_station,
+    COUNT(*) AS trip_count
 FROM
-   
-  trips
-
-
+    trips
 GROUP BY 1
 
 
@@ -43,31 +30,21 @@ Output: There were 80 unique stations, and the number of trips per station range
 3:What's the shortest trip that happened?
 
 SELECT
-   
-   MIN(duration) AS shortest_trip
-
+    MIN(duration) AS shortest_trip
 FROM
-    
-   trips
-    
+    trips
+
 
 Output: The shortest trip duration is 60 seconds
  
  
  4:What is the average trip duration, by end station?
- 
  SELECT
-   
-   end_station,
-   
-   AVG(duration) as average_duration
-
+    end_station,
+    AVG(duration) as average_duration
 FROM
-   
-  trips
-
-
+    trips
 GROUP BY 1
-
+ 
 
 Output:The average trip duration, aggregated by end station, ranges from 257 to 4710.9.
