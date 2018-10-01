@@ -52,7 +52,8 @@ Output: The shortest trip duration is 60 seconds
  
  
  4:What is the average trip duration, by end station?
- SELECT
+
+SELECT
     
    end_station,
     
